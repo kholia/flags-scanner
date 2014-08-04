@@ -1,0 +1,75 @@
+systemd,1,Full RELRO,Canary found,NX enabled,No PIE,Yes
+sddm-helper,1184,Full RELRO,Canary found,NX enabled,No PIE,Yes
+systemd,1193,Full RELRO,Canary found,NX enabled,No PIE,Yes
+(sd-pam),1194,Full RELRO,Canary found,NX enabled,No PIE,Yes
+startkde,1195,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+dbus-launch,1243,Partial RELRO,Canary found,NX enabled,PIE enabled,Yes
+dbus-daemon,1244,Partial RELRO,Canary found,NX enabled,PIE enabled,Yes
+start_kdeinit,1288,Partial RELRO,Canary found,NX enabled,PIE enabled,Yes
+kdeinit5,1289,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+klauncher,1290,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+kded5,1292,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+kwrapper5,1477,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+ksmserver,1478,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+kaccess,1479,Partial RELRO,No Canary found,NX enabled,No PIE,No
+kglobalaccel5,1483,Partial RELRO,No Canary found,NX enabled,No PIE,No
+kwin_x11,1487,Partial RELRO,No Canary found,NX enabled,No PIE,No
+baloo_file,1488,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+krunner,1490,Partial RELRO,No Canary found,NX enabled,No PIE,No
+udisksd,1492,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+dconf-service,1497,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+upowerd,1508,Full RELRO,Canary found,NX enabled,PIE enabled,Yes
+plasmashell,1509,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+kactivitymanage,1532,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+polkit-kde-auth,1534,Partial RELRO,No Canary found,NX enabled,No PIE,No
+kscreen_backend,1535,Partial RELRO,No Canary found,NX enabled,No PIE,Yes
+xembedsniproxy,1545,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+spice-vdagent,1552,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+pulseaudio,1560,Full RELRO,Canary found,NX enabled,PIE enabled,Yes
+rtkit-daemon,1561,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+bluetoothd,1572,Partial RELRO,Canary found,NX enabled,PIE enabled,Yes
+cupsd,1592,Full RELRO,Canary found,NX enabled,PIE enabled,Yes
+ntpd,1631,Partial RELRO,Canary found,NX enabled,PIE enabled,Yes
+master,1940,Partial RELRO,Canary found,NX enabled,PIE enabled,Yes
+pickup,1941,Partial RELRO,No Canary found,NX enabled,PIE enabled,No
+qmgr,1942,Partial RELRO,Canary found,NX enabled,PIE enabled,Yes
+cron,1955,Full RELRO,Canary found,NX enabled,PIE enabled,Yes
+kuiserver5,1982,Partial RELRO,No Canary found,NX enabled,No PIE,No
+su,20072,Partial RELRO,Canary found,NX enabled,PIE enabled,Yes
+bash,20075,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+gvfsd,2169,Partial RELRO,No Canary found,NX enabled,No PIE,No
+gvfsd-fuse,2173,Partial RELRO,No Canary found,NX enabled,No PIE,No
+kget,2197,Partial RELRO,No Canary found,NX enabled,No PIE,No
+kdeinit4,2202,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+klauncher,2204,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+kded4,2206,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+knotify4,2270,Partial RELRO,No Canary found,NX enabled,No PIE,No
+firefox,2289,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+kmozillahelper,2314,Partial RELRO,No Canary found,NX enabled,No PIE,No
+at-spi-bus-laun,2321,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+konsole,2363,Partial RELRO,No Canary found,NX enabled,No PIE,No
+bash,2369,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+gvfsd-metadata,2458,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+systemd-journal,392,Full RELRO,Canary found,NX enabled,No PIE,Yes
+systemd-udevd,414,Full RELRO,Canary found,NX enabled,No PIE,Yes
+haveged,476,Full RELRO,Canary found,NX enabled,PIE enabled,Yes
+auditd,581,Full RELRO,Canary found,NX enabled,PIE enabled,Yes
+dbus-daemon,759,Partial RELRO,Canary found,NX enabled,PIE enabled,Yes
+avahi-daemon,760,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+ModemManager,762,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+wpa_supplicant,763,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+irqbalance,767,Full RELRO,Canary found,NX enabled,PIE enabled,Yes
+nscd,768,Full RELRO,Canary found,NX enabled,PIE enabled,Yes
+systemd-logind,786,Full RELRO,Canary found,NX enabled,No PIE,Yes
+agetty,788,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+spice-vdagentd,797,Full RELRO,Canary found,NX enabled,PIE enabled,Yes
+polkitd,807,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+sddm,907,Full RELRO,Canary found,NX enabled,No PIE,Yes
+wickedd-dhcp6,908,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+wickedd-dhcp4,909,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+wickedd-auto4,910,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+wickedd,912,Partial RELRO,No Canary found,NX enabled,No PIE,Yes
+wickedd-nanny,913,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+X,917,Partial RELRO,Canary found,NX enabled,No PIE,Yes
+dolphin,9746,Partial RELRO,No Canary found,NX enabled,No PIE,No
+file.so,9756,Partial RELRO,Canary found,NX enabled,No PIE,Yes

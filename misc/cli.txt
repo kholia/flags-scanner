@@ -1,0 +1,91 @@
+* System-wide ASLR (kernel.randomize_va_space): [32mFull (Setting: 2)[m
+
+  Description - Make the addresses of mmap base, heap, stack and VDSO page randomized.
+  This, among other things, implies that shared libraries will be loaded to random
+  addresses. Also for PIE-linked binaries, the location of code start is randomized.
+
+  See the kernel file 'Documentation/sysctl/kernel.txt' for more details.
+
+* Does the CPU support NX: [32mYes[m
+
+         COMMAND    PID RELRO           STACK CANARY      NX/PaX        PIE 			FORTIFY
+         systemd      1 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+     sddm-helper   1184 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+         systemd   1193 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+        (sd-pam)   1194 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+        startkde   1195 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+     dbus-launch   1243 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+     dbus-daemon   1244 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+   start_kdeinit   1288 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+        kdeinit5   1289 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+       klauncher   1290 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+           kded5   1292 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+ kcminit_startup   1294 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+       kwrapper5   1477 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+       ksmserver   1478 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+         kaccess   1479 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+   kglobalaccel5   1483 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+        kwin_x11   1487 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+      baloo_file   1488 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+         krunner   1490 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+         udisksd   1492 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+   dconf-service   1497 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+         upowerd   1508 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+     plasmashell   1509 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+ kactivitymanage   1532 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+ polkit-kde-auth   1534 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+ kscreen_backend   1535 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+  xembedsniproxy   1545 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+   spice-vdagent   1552 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+      pulseaudio   1560 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+    rtkit-daemon   1561 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+      bluetoothd   1572 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+           cupsd   1592 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+            ntpd   1631 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+          master   1940 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+          pickup   1941 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [32mPIE enabled          [m   [31mNo[m
+            qmgr   1942 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+            cron   1955 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+      desktop.so   1976 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+         file.so   1979 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+      kuiserver5   1982 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+        trash.so   1992 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+        trash.so   1993 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+           gvfsd   2169 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+      gvfsd-fuse   2173 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+            kget   2197 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+        kdeinit4   2202 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+       klauncher   2204 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+           kded4   2206 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+        knotify4   2270 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+         firefox   2289 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+  kmozillahelper   2314 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+ at-spi-bus-laun   2321 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+         konsole   2363 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [31mNo[m
+            bash   2369 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+       kio_trash   2447 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+        kio_file   2448 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+  gvfsd-metadata   2458 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+              su   2469 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+            bash   2472 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+ systemd-journal    392 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+   systemd-udevd    414 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+         haveged    476 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+          auditd    581 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+     dbus-daemon    759 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+    avahi-daemon    760 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+    ModemManager    762 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+  wpa_supplicant    763 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+      irqbalance    767 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+            nscd    768 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+  systemd-logind    786 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+          agetty    788 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+  spice-vdagentd    797 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [32mPIE enabled          [m   [32mYes[m
+         polkitd    807 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+            sddm    907 [32mFull RELRO   [m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+   wickedd-dhcp6    908 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+   wickedd-dhcp4    909 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+   wickedd-auto4    910 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+         wickedd    912 [33mPartial RELRO[m   [31mNo canary found[m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+   wickedd-nanny    913 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
+               X    917 [33mPartial RELRO[m   [32mCanary found   [m   [32mNX enabled [m   [31mNo PIE               [m   [32mYes[m
